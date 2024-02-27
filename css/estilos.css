@@ -1,0 +1,290 @@
+:root {
+    --cor-fundo: #13293d;
+    --cor-hover: rgba(1, 75, 109, 0.767);
+    --cor-primaria: rgb(231, 241, 236);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--cor-fundo);
+}
+.modelo-visita {
+  display: flex;
+  gap: 5px;
+  margin-top: 20px;
+  border: 2px solid #BBDEFB;
+  border-radius: 5px;
+  margin-bottom: 32px;
+  padding: 10px;
+}
+
+.modelo-visita label {
+  flex: 1; /* Equal width for each label */
+  text-align: center; /* Center-align the text within each label */
+}
+
+.modelo-visita input {
+  width: auto; /* Allow the width to be based on content */
+}
+.dp-menu ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: var(--cor-fundo);
+  margin: 0;
+}
+
+.dp-menu ul li {
+  display: inline;
+  position: relative;
+}
+
+.dp-menu ul li a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  transition: background .3s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dp-menu ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--cor-hover);
+  transition: width 0.3s;
+}
+
+.dp-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.dp-menu ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.dp-menu ul li:hover>ul {
+  display: block;
+}
+
+.dp-menu ul ul {
+  width: 200px;
+}
+
+.dp-menu ul ul li a {
+  display: block;
+}
+
+.wrap {
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0px 0px 3px grey;
+  border-radius: 10px;
+}
+
+.icon-container {
+  position: fixed;
+  top: 25px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 100px;
+}
+
+.icon-container a {
+  margin-top: 5px;
+}
+
+.contenedor-formulario {
+  width: 100%;
+  color: grey;
+  padding: 50px;
+}
+
+.contenedor-formulario .formulario {
+  width: 100%;
+  margin: auto;
+}
+
+.contenedor-formulario .formulario .input-group {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"] {
+  font-family: "Roboto";
+  font-size: 16px;
+  color: #303F9F;
+  width: 100%;
+  outline: none;
+  padding: 15px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #BBDEFB;
+}
+
+.contenedor-formulario .formulario input[type="number"],
+.contenedor-formulario .formulario input[type="tel"],
+.contenedor-formulario .formulario input[type="date"],
+.contenedor-formulario .formulario input[type="month"] {
+  font-family: "Roboto";
+  font-size: 16px;
+  color: #303F9F;
+  width: 100%;
+  outline: none;
+  padding: 15px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #BBDEFB;
+}
+
+
+
+.contenedor-formulario .formulario .input-group input[type="text"].error,
+.contenedor-formulario .formulario .input-group input[type="number"].error,
+.contenedor-formulario .formulario .input-group input[type="date"].error,
+.contenedor-formulario .formulario .input-group input[type="tel"].error,
+.contenedor-formulario .formulario .input-group input[type="month"].error {
+  border-bottom: 2px solid #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"].error+label {
+  color: #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"]:focus:invalid {
+  border-bottom: 2px solid #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"]:focus:invalid+label {
+  color: #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group input[type="text"]:focus:invalid+label.active {
+  top: -12px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group.radio label {
+  display: inline-block;
+  cursor: pointer;
+  color: #303F9F;
+  position: relative;
+  padding: 5px 15px 5px 51px;
+  font-size: 1em;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contenedor-formulario .formulario .input-group.radio label:hover {
+  background: #bbdefb;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox label:before,
+.contenedor-formulario .formulario .input-group.radio label:before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: 15px;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid #303F9F;
+}
+
+.contenedor-formulario .formulario .input-group.error label {
+  color: #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group.error label:hover {
+  background: rgba(211, 47, 47, 0.2);
+}
+
+.contenedor-formulario .formulario .input-group.error label:before {
+  border: 2px solid #D32F2F;
+}
+
+.contenedor-formulario .formulario .input-group.checkbox label:before {
+  border-radius: 3px;
+}
+
+.contenedor-formulario .formulario input[type="submit"] {
+  background: var(--cor-fundo);
+  border-radius: 1px;
+  border: 2px solid #f2f2f2;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Roboto";
+  font-size: 16px;
+  padding: 15px;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.contenedor-formulario .formulario input[type="submit"]:hover {
+  background: var(--cor-hover);
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    width: 100%;
+    /* 100% de largura em telas menores que 768px */
+    max-width: none;
+    /* Remove a largura máxima para se adaptar a telas menores */
+    padding: 20px;
+    /* Reduz o padding para telas menores */
+  }
+
+  .contenedor-formulario {
+    padding: 20px;
+    /* Reduz o padding para telas menores */
+  }
+
+  .contenedor-formulario .formulario .input-group input[type="text"] {
+    padding: 10px;
+    /* Reduz o padding para telas menores */
+  }
+
+  .contenedor-formulario .formulario input[type="submit"] {
+    padding: 10px;
+    /* Reduz o padding para telas menores */
+  }
+}
+
+header {
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--cor-fundo);
+}
+
+.dp-menu ul {
+  list-style-type: none;
+  padding: 0;
+  background-color: var(--cor-fundo);
+  margin: 0;
+}

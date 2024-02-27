@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="shortcut icon" type="imagex/png" href="img/logo_polybalas.ico">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<title>POLYBALAS</title>
+</head>
+
+<body>
+	<header>
+		<nav class="dp-menu">
+			<ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="form_roteiro.html">Roteirização</a></li>
+                <li><a href="form_agenda.html">Agendas Supervisores</a></li>
+                <li><a href="form_vendedor_solicitacao.html">Modificação de Vendedores</a></li>
+            </ul>
+		</nav>
+	</header>
+	<div class="contenedor-formulario">
+		<div class="wrap">
+			<form action="https://api.sheetmonkey.io/form/pS2tgbtQVxirxh1KRfzCJP" class="formulario" id="formAgenda" name="formulario_registro" method="post">
+				<div>
+
+					<div class="input-group">
+						<label for="funcionario">Funcionário:</label>
+						<input type="text" id="funcionario" name="funcionario" pattern="[A-Za-zÀ-ú\s\-']{2,50}"
+							minlength="2" maxlength="50" required oninput="this.value = this.value.toUpperCase()">
+					</div>
+
+					<div class="input-group">
+						<label for="placaVeiculo">Placa do Veículo:</label>
+						<input type="text" id="placaInput" oninput="formatarPlaca(this)"
+							pattern="[A-Z0-9]{3}-[A-Z0-9]{4}" minlength="8" maxlength="8" required>
+					</div>
+
+					<div class="input-group">
+						<label for="semanaAtual">Semana:</label>
+						<input type="number" id="semanaAtual" name="semanaAtual" placeholder="Semana" min="1" max="5"
+							required>
+					</div>
+
+					<div class="input-group">
+						<label for="mes">Mês:</label>
+						<input type="month" id="mes" name="mes" required>
+					</div>
+
+					<div class="input-group">
+						<label for="segunda">Segunda-feira:</label>
+						<input type="date" id="segunda" name="segunda" required>
+						<input type="text" id="cidadesegunda" name="cidadesegunda" placeholder="Cidade" minlength="10"
+							maxlength="25" required oninput="this.value = this.value.toUpperCase()">
+						<input type="text" id="observacaoSegunda" name="observacaoSegunda" placeholder="Observação"
+							minlength="5" maxlength="45" required oninput="this.value = this.value.toUpperCase()">
+					</div>
+
+					<div class="input-group">
+						<label for="terca">Terça-feira:</label>
+						<input type="date" id="terca" name="terca" required>
+						<input type="text" id="cidadeTerca" name="cidadeTerca" placeholder="Cidade" minlength="10"
+							maxlength="25" required oninput="this.value = this.value.toUpperCase()">
+						<input type="text" id="observacaoTerca" name="observacaoTerca" placeholder="Observação"
+							minlength="5" maxlength="45" required oninput="this.value = this.value.toUpperCase()">
+					</div>
+
+					<div class="input-group">
+						<label for="quarta">Quarta-feira:</label>
+						<input type="date" id="quarta" name="quarta" required>
+						<input type="text" id="cidadeQuarta" name="cidadeQuarta" placeholder="Cidade" minlength="3"
+							maxlength="25" required oninput="this.value = this.value.toUpperCase()">
+						<input type="text" id="observacaoQuarta" name="observacaoQuarta" placeholder="Observação"
+							minlength="5" maxlength="45" required oninput="this.value = this.value.toUpperCase()">
+					</div>
+
+					<div class="input-group">
+						<label for="quinta">Quinta-feira:</label>
+						<input type="date" id="quinta" name="quinta" required>
+						<input type="text" id="cidadeQuinta" name="cidadeQuinta" placeholder="Cidade" minlength="3"
+							maxlength="25" required oninput="this.value = this.value.toUpperCase()">
+						<input type="text" id="observacaoQuinta" name="observacaoQuinta" placeholder="Observação"
+							minlength="5" maxlength="45" required oninput="this.value = this.value.toUpperCase()">
+					</div>
+
+					<div class="input-group">
+						<label for="sexta">Sexta-feira:</label>
+						<input type="date" id="sexta" name="sexta" required>
+						<input type="text" id="cidadeSexta" name="cidadeSexta" placeholder="Cidade" minlength="3"
+							maxlength="25" required oninput="this.value = this.value.toUpperCase()">
+						<input type="text" id="observacaoSexta" name="observacaoSexta" placeholder="Observação"
+							minlength="5" maxlength="45" required oninput="this.value = this.value.toUpperCase()">
+					</div>
+
+					<div class="input-group">
+						<label for="sabado">Sábado:</label>
+						<input type="date" id="sabado" name="sabado" required>
+						<input type="text" id="cidadeSabado" name="cidadeSabado" placeholder="Cidade" minlength="3"
+							maxlength="25" required oninput="this.value = this.value.toUpperCase()">
+						<input type="text" id="observacaoSabado" name="observacaoSabado" placeholder="Observação"
+							minlength="5" maxlength="45" required oninput="this.value = this.value.toUpperCase()">
+					</div>
+
+					<input type="hidden" id="dataHoraEnvio" name="dataHoraEnvio">
+                        <input type="submit" id="btn-submit" value="Enviar">
+				</div>
+			</form>
+		</div>
+		<div class="icon-container">
+            <a href="https://wa.me/message/LL3NLMNAPYGOI1"><img src="img/icone_whatsapp.png" alt="Ícone 1" width="45"></a>
+            <a href="mailto:arthur.nobrega@polybalas.com"><img src="img/icone_email.png" alt="ícone 2" width="45"></a>
+        </div>
+	</div>
+
+	<script src="js/formulario.js"></script>
+	<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Adiciona um ouvinte de evento para o envio do formulário
+            document.getElementById('formAgenda').addEventListener('submit', function () {
+                // Obtém a data e hora atual no fuso horário de Brasília
+                var dataHoraAtualBrasilia = new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' });
+                
+                // Cria campos ocultos para armazenar a data e hora de envio
+                var inputDataHora = document.createElement('input');
+                inputDataHora.type = 'hidden';
+                inputDataHora.name = 'dataHoraEnvio';
+                inputDataHora.value = dataHoraAtualBrasilia;
+    
+                // Adiciona os campos ocultos ao formulário
+                this.appendChild(inputDataHora);
+            });
+        });
+    </script>
+</body>
+
+</html>
